@@ -14,7 +14,7 @@ import "sort"
     例如通过 map 记录每个元素出现的次数，
     然后再遍历 map 找到出现次数为1的元素。
 */
-func singleNumber(nums []int) int {
+func SingleNumber(nums []int) int {
 	//创建一个空map
 	numMap := make(map[int]int)
 	for _, value := range nums {
@@ -40,7 +40,7 @@ func singleNumber(nums []int) int {
 *
 *  双指针法: 快慢指针
  */
-func singleNumber1(nums []int) int {
+func SingleNumber1(nums []int) int {
 	sort.Ints(nums)
 	//慢指针,用指向第一个不重复的数字
 	i := 0
