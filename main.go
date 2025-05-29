@@ -3,6 +3,7 @@ package main
 import (
 	"MetaNode/base1_golang/chapter1"
 	"MetaNode/base1_golang/chapter2"
+	"MetaNode/base1_golang/chapter3"
 	"fmt"
 )
 
@@ -26,6 +27,12 @@ func main() {
 	num := 12321
 	palindrome := chapter2.IsPalindrome(num)
 	fmt.Println("回文数", palindrome)
+
+	//s = "(){}}{"
+	s := "(){}}{"
+	valid := chapter3.IsValid(s)
+	fmt.Println("有效的括号", valid)
+
 	//TIP <p>Press <shortcut actionId="ShowIntentionActions"/> when your caret is at the underlined text
 	// to see how GoLand suggests fixing the warning.</p><p>Alternatively, if available, click the lightbulb to view possible fixes.</p>
 }
