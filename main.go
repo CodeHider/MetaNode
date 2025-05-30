@@ -42,6 +42,16 @@ func main() {
 	duplicates := chapter4.RemoveDuplicates(nums1)
 	fmt.Println("数组中的元素个数", duplicates)
 
+	addOne := []int{9, 9, 9}
+	one := chapter4.PlusOne(addOne)
+	fmt.Println("加一的结果:", one)
+
+	digits := []int{9}
+	chapter4.PlusOne(digits)
+	//nums = [2,7,11,15], target = 9
+	twoSum := []int{2, 7, 11, 15}
+	sum := chapter4.TwoSum(twoSum, 9)
+	fmt.Println("数组的下标:", sum)
 	//TIP <p>Press <shortcut actionId="ShowIntentionActions"/> when your caret is at the underlined text
 	// to see how GoLand suggests fixing the warning.</p><p>Alternatively, if available, click the lightbulb to view possible fixes.</p>
 }
