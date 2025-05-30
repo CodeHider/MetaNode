@@ -33,6 +33,10 @@ func main() {
 	valid := chapter3.IsValid(s)
 	fmt.Println("有效的括号", valid)
 
+	strs := []string{"flower", "flow", "flight"}
+	prefix := chapter3.LongestCommonPrefix(strs)
+	fmt.Println("最长公共前缀", prefix)
+
 	//TIP <p>Press <shortcut actionId="ShowIntentionActions"/> when your caret is at the underlined text
 	// to see how GoLand suggests fixing the warning.</p><p>Alternatively, if available, click the lightbulb to view possible fixes.</p>
 }
