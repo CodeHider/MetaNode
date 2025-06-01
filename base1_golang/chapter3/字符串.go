@@ -76,3 +76,8 @@ func min(x, y int) int {
 	}
 	return y
 }
+
+// LongestCommonPrefix_z /**
+/**
+  纵向比较。??
+*/

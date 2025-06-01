@@ -66,3 +66,46 @@ func TwoSum(nums []int, target int) []int {
 	}
 	return nil
 }
+
+// Merge /*
+/**
+合并区间：
+	以数组 intervals 表示若干个区间的集合，
+	其中单个区间为 intervals[i] = [starti, endi] 。
+	请你合并所有重叠的区间，
+	并返回 一个不重叠的区间数组，
+	该数组需恰好覆盖输入中的所有区间 。
+*/
+func Merge(intervals [][]int) [][]int {
+	//输入: intervals = [[1,3],[2,6],[8,10],[15,18]]
+	//输出: [[1,6],[8,10],[15,18]]
+	temp := make([]int, 0)
+	temp = intervals[0]
+	sort.Ints(temp)
+	if len(intervals) <= 1 {
+		return intervals
+	}
+	//切片的长度
+	result := make([][]int, 0)
+	result = append(result, temp)
+	for i := 1; i < len(intervals); i++ {
+		arr := intervals[i]
+		sort.Ints(arr)
+		//相交
+		if temp[0] >= arr[0] && temp[0] <= arr[len(arr)-1] {
+			temp[0] = arr[0]
+			if temp[len(temp)-1] < arr[len(arr)-1] {
+				temp[len(temp)-1] = arr[len(arr)-1]
+			}
+		} else if temp[0] <= arr[0] && arr[0] <= temp[len(temp)-1] {
+			//相交
+			if temp[len(temp)-1] < arr[len(arr)-1] {
+				temp[len(temp)-1] = arr[len(arr)-1]
+			}
+		} else {
+			//不相交
+			result = append(result, arr)
+		}
+	}
+	return result
+}
